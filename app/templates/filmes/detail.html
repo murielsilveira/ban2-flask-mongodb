@@ -18,5 +18,8 @@
         <dd>{{ filme.descricao }}</dd>
     </dl>
     <br/>
-    <p><a class="btn btn-default" href="{{ url_for('filmes.edit', titulo=filme.titulo) }}" role="button">Editar</a></p>
+    <p>
+        <a class="btn btn-default" href="{{ url_for('filmes.edit', titulo=filme.titulo) }}" role="button">Editar</a>
+        <a class="btn btn-danger" href="{{ url_for('filmes.delete', titulo=filme.titulo) }}" role="button">Excluir</a>
+    </p>
 {% endblock %}

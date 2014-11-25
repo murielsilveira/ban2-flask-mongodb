@@ -82,8 +82,16 @@ class FilmeEditView(MethodView):
         return render_template('filmes/edit.html', **context)
 
 
+class FilmeDeleteView(MethodView):
+
+    def get(self, titulo):
+        Filme.objects.get_or_404(titulo=titulo).delete()
+        return redirect(url_for('filmes.list'))
+
+
 # Registrar URLs
 filmes.add_url_rule('/', view_func=FilmeListView.as_view('list'))
 filmes.add_url_rule('/criar/', view_func=FilmeEditView.as_view('create'), defaults={'titulo': None})
 filmes.add_url_rule('/<titulo>/', view_func=FilmeDetailView.as_view('detail'))
 filmes.add_url_rule('/<titulo>/editar/', view_func=FilmeEditView.as_view('edit'))
+filmes.add_url_rule('/<titulo>/deletar/', view_func=FilmeDeleteView.as_view('delete'))
