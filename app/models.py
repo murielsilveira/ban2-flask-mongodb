@@ -8,7 +8,7 @@ class Filme(db.Document):
     titulo = db.StringField(verbose_name="Titulo", max_length=50, required=True)
     diretor = db.StringField(verbose_name="Diretor", max_length=50, required=True)    
     categoria = db.StringField(verbose_name="Categoria", max_length=50, required=True)
-    descricao = db.StringField(verbose_name="Descricao", max_length=200, required=False)
+    descricao = db.StringField(verbose_name="Descricao", max_length=500, required=False)
 
     def __unicode__(self):
         return self.titulo
