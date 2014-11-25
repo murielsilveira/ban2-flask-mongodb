@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block page_header %}
+    <div class="page-header">
+        <h1>{{ filme.titulo }}</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <dl class="dl-horizontal">
+        <dt>Diretor</dt>
+        <dd>{{ filme.diretor }}</dd>
+        <br/>
+        <dt>Categoria</dt>
+        <dd>{{ filme.categoria }}</dd>
+        <br/>
+        <dt>Descrição</dt>
+        <dd>{{ filme.descricao }}</dd>
+    </dl>
+    <br/>
+    <p><a class="btn btn-default" href="{{ url_for('filmes.edit', titulo=filme.titulo) }}" role="button">Editar</a></p>
+{% endblock %}

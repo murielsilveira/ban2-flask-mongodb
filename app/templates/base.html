@@ -1,0 +1,33 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Filmes - MongoDB</title>
+
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        {% block topbar %}
+            <div class="container">
+                <div class="page-header">
+                    <h1><a href="/">Filmes - MongoDB</a> <small>Muriel, Rogério e Paulo</small></h1>
+                </div>
+            </div>
+        {% endblock %}
+
+        <div class="container">
+            <div class="content">
+                {% block page_header %}{% endblock %}
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        {% block js_footer %}{% endblock %}
+    </body>
+</html>

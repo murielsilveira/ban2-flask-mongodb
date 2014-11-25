@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "_forms.html" as forms %}
+
+{% block page_header %}
+    <div class="page-header">
+        <h1>
+            {% if create %}
+                Novo Filme
+            {% else %}
+                {{ filme.titulo }}
+            {% endif %}
+        </h1>        
+    </div>
+{% endblock %}
+
+{% block content %}
+    <form action="?{{ request.query_string }}" method="post" class="form-horizontal" role="form">
+        {{ forms.render(form) }}
+        <br/>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input class="btn btn-primary" type="submit" value="Salvar">
+                <a class="btn btn-link" href="{{ url_for("filmes.list") }}" role="buttom">Cancelar</a>
+            </div>
+        </div>
+    </form>
+{% endblock %}
