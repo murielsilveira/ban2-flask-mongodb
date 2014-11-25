@@ -84,6 +84,6 @@ class FilmeEditView(MethodView):
 
 # Registrar URLs
 filmes.add_url_rule('/', view_func=FilmeListView.as_view('list'))
-filmes.add_url_rule('/criar/', view_func=FilmeEditView.as_view('create'))
+filmes.add_url_rule('/criar/', view_func=FilmeEditView.as_view('create'), defaults={'titulo': None})
 filmes.add_url_rule('/<titulo>/', view_func=FilmeDetailView.as_view('detail'))
 filmes.add_url_rule('/<titulo>/editar/', view_func=FilmeEditView.as_view('edit'))
