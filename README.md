@@ -1,5 +1,7 @@
 # BAN 2 App - Flask with MongoDB
 
+[![Codacy Badge](https://www.codacy.com/project/badge/ac60a4ad07d54db6a9e229193eceba44)](https://www.codacy.com/app/murielkong/ban2-flask-mongodb)
+
 Aplicação para estudos utilizando [MongoDB](http://www.mongodb.org/).
 
 ## Instalação
